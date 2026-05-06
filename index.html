@@ -1,278 +1,364 @@
-
+<!--ciallo～(∠・ω< )⌒☆-->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinkLove - 遇见心动·遇见爱</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script  src="./1.js" ></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#FF3399',
-                        secondary: '#FFB3D9',
-                        light: '#FFF0F7',
-                        dark: '#881A4D',
-                    },
-                    fontFamily: {
-                        sans: ['PingFang SC', 'Microsoft YaHei', 'sans-serif'],
-                    },
-                }
-            }
+    <script  src="./ac1a941554d9513009e5a2a64284eb5.js" ></script>
+    <title>PinkLove-遇见心动·遇见爱</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
         }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-shadow {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .bg-blur {
-                backdrop-filter: blur(8px);
-            }
-            .gradient-bg {
-                background: linear-gradient(135deg, #FFF0F7 0%, #FFD9E8 50%, #FFB3D9 100%);
-            }
-            .btn-primary {
-                @apply bg-primary hover:bg-primary/90 text-white font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-primary/30;
-            }
-            .btn-secondary {
-                @apply bg-white/80 border border-primary text-primary hover:bg-white font-medium rounded-full transition-all duration-300;
-            }
+
+        body {
+            background: linear-gradient(rgba(255, 182, 193, 0.644), rgba(255, 112, 183, 0.667)), 
+                        url('./background.jpg') no-repeat center center;
+            background-size: cover;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 60px;
+            width: 100%;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-heart {
+            width: 36px;
+            height: 32px;
+            position: relative;
+        }
+
+        .logo-heart::before, .logo-heart::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 18px;
+            height: 28px;
+            border-radius: 18px 18px 0 0;
+            background: #ff3385;
+        }
+
+        .logo-heart::before {
+            left: 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .logo-heart::after {
+            left: 18px;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        .logo-text {
+            color: #ff3385;
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .logo-desc {
+            color: #ad1457;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 50px;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .nav-menu a:hover {
+            opacity: 1;
+        }
+
+        .nav-btn-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-login {
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 8px 28px;
+            border-radius: 22px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .btn-register {
+            background: #ff3385;
+            border: none;
+            color: #fff;
+            padding: 8px 28px;
+            border-radius: 22px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-register:hover {
+            background: #e91e63;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 60px;
+            min-height: 65vh;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-title {
+            font-size: 50px;
+            font-weight: 800;
+            color: #ad1457;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            font-size: 38px;
+            font-weight: 600;
+            color: #ad1457;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+
+        .hero-desc {
+            font-size: 20px;
+            color: #880e4f;
+            margin-bottom: 35px;
+        }
+
+        .feature-tags {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .tag-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #880e4f;
+            font-size: 16px;
+        }
+
+        .tag-icon {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #880e4f;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        .hero-btn-group {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn-free-register {
+            background: #ff4081;
+            border: none;
+            color: #fff;
+            padding: 13px 35px;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.3s;
+        }
+
+        .btn-free-register:hover {
+            background: #e91e63;
+        }
+
+        .btn-immediate-login {
+            background: transparent;
+            border: 2px solid #ff4081;
+            color: #ff4081;
+            padding: 13px 35px;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-immediate-login:hover {
+            background: rgba(255, 64, 129, 0.1);
+        }
+
+        .user-count {
+            color: #880e4f;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            width: 45%;
+            height: 500px;
+            position: relative;
+        }
+
+        .function-section {
+            background: #fff;
+            border-radius: 22px 22px 0 0;
+            margin: 0 60px;
+            padding: 35px 60px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .function-item {
+            text-align: center;
+            max-width: 220px;
+            flex: 1;
+        }
+
+        .function-icon {
+            font-size: 32px;
+            color: #ff4081;
+            margin-bottom: 12px;
+        }
+
+        .function-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .function-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .footer-slogan {
+            text-align: center;
+            padding: 25px 0;
+            color: #880e4f;
+            font-size: 18px;
         }
     </style>
 </head>
-<body class="gradient-bg min-h-screen w-full">
-    <header class="w-full fixed top-0 left-0 z-50 bg-white/20 bg-blur px-4 md:px-8 py-3">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <!-- Logo区域 -->
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 rounded-full bg-white/80 flex items-center justify-center">
-                    <i class="fa-solid fa-heart text-primary text-xl"></i>
+<body>
+    <nav>
+        <div class="logo-box">
+            <div class="logo-heart"></div>
+            <div>
+                <div class="logo-text">PinkLove</div>
+                <div class="logo-desc">遇见心动·遇见爱</div>
+            </div>
+        </div>
+        <div class="nav-menu">
+            <a href="#">首页</a>
+            <a href="#">社区</a>
+            <a href="#">活动</a>
+            <a href="#">关于我们</a>
+        </div>
+        <div class="nav-btn-group">
+            <button class="btn-login">登录</button>
+            <button class="btn-register">注册</button>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">遇见心动的他</h1>
+            <h2 class="hero-subtitle">让爱情从这里开始</h2>
+            <p class="hero-desc">专为男同打造的高品质约会平台</p>
+            
+            <div class="feature-tags">
+                <div class="tag-item">
+                    <span class="tag-icon">❤</span>
+                    <span>真实<br>真人认证</span>
                 </div>
-                <div>
-                    <h1 class="text-2xl font-bold text-primary italic">PinkLove</h1>
-                    <p class="text-xs text-dark/80">遇见心动·遇见爱</p>
+                <div class="tag-item">
+                    <span class="tag-icon">🛡️</span>
+                    <span>安全<br>隐私保护</span>
+                </div>
+                <div class="tag-item">
+                    <span class="tag-icon">💬</span>
+                    <span>友好<br>真诚交友</span>
                 </div>
             </div>
 
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#" class="text-dark/80 hover:text-primary transition-colors">首页</a>
-                <a href="#" class="text-dark/80 hover:text-primary transition-colors">功能</a>
-                <a href="#" class="text-dark/80 hover:text-primary transition-colors">我的</a>
-                <a href="#" class="text-dark/80 hover:text-primary transition-colors">社区</a>
-                <a href="#" class="text-dark/80 hover:text-primary transition-colors">活动</a>
-                <a href="#" class="text-dark/80 hover:text-primary transition-colors">关于我们</a>
-            </nav>
+            <div class="hero-btn-group">
+                <button class="btn-free-register">免费注册 ❤</button>
+                <button class="btn-immediate-login">立即登录</button>
+            </div>
 
-            <div class="flex items-center gap-3">
-                <button class="btn-secondary px-6 py-2">登录</button>
-                <button class="btn-primary px-6 py-2">注册</button>
-            </div>
+            <p class="user-count">已有 1,258,320 位帅哥在这里找到属于自己的幸福</p>
         </div>
-    </header>
-    <section class="pt-32 pb-20 px-4 md:px-8 w-full">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-                <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-primary leading-tight text-shadow mb-4">
-                    遇见心动的他
-                </h2>
-                <h3 class="text-[clamp(1.2rem,3vw,2rem)] font-semibold text-dark/90 mb-6">
-                    让爱情从这里开始
-                </h3>
-                <p class="text-lg text-dark/80 mb-8">专为男同打造的高品质约会平台</p>
-                <div class="grid grid-cols-3 gap-4 mb-10">
-                    <div class="flex flex-col items-center gap-2">
-                        <div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center">
-                            <i class="fa-solid fa-heart text-primary"></i>
-                        </div>
-                        <p class="text-dark font-medium">真实</p>
-                        <p class="text-xs text-dark/70 text-center">真人认证</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-2">
-                        <div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center">
-                            <i class="fa-solid fa-shield-halved text-primary"></i>
-                        </div>
-                        <p class="text-dark font-medium">安全</p>
-                        <p class="text-xs text-dark/70 text-center">隐私保护</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-2">
-                        <div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center">
-                            <i class="fa-solid fa-comment-dots text-primary"></i>
-                        </div>
-                        <p class="text-dark font-medium">友好</p>
-                        <p class="text-xs text-dark/70 text-center">真诚交友</p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-4 mb-6">
-                    <button class="btn-primary px-8 py-3 text-lg flex items-center gap-2">
-                        免费注册 <i class="fa-solid fa-heart"></i>
-                    </button>
-                    <button class="btn-secondary px-8 py-3 text-lg">
-                        立即登录
-                    </button>
-                </div>
-                <p class="text-dark/70 text-sm flex items-center gap-2">
-                    <i class="fa-solid fa-user-check text-primary"></i>
-                    已有 1,258,320 位帅哥在这里找到属于自己的幸福
-                </p>
-            </div>
-            <div class="order-1 md:order-2 relative">
-                <div class=" h-[400px] md:h-[500px] rounded-2xl overflow-hidden relative">
-                    <!--ciallo～(∠・ω< )⌒☆-->
-                    <img src="https://gitee.com/sui-physics/picture/raw/d510cd5f7ac1a941554d9513009e5a2a64284eb5/picture/a71e2eb1c56294a2ed88a331a4e17fb1.jpg" alt="遇见心动" class="w-full h-full object-cover opacity-40 blur-sm">
-                    <div class="absolute inset-0 bg-primary/10"></div>
-                </div>
-            </div>
+        <div class="hero-image">
         </div>
-    </section>
-    <section class="py-16 px-4 md:px-8 w-full bg-white/30">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-white/60 rounded-xl p-6 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-user-check text-primary text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-dark mb-2">真人认证</h4>
-                            <p class="text-sm text-dark/70">严格的真人认证机制，拒绝虚假，遇见真实</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white/60 rounded-xl p-6 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-lock text-primary text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-dark mb-2">隐私保护</h4>
-                            <p class="text-sm text-dark/70">多重隐私保护措施，守护你的每一份信任</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white/60 rounded-xl p-6 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-heart-circle-check text-primary text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-dark mb-2">精准匹配</h4>
-                            <p class="text-sm text-dark/70">智能推荐合适的他，让相遇更有可能</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white/60 rounded-xl p-6 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-star text-primary text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-semibold text-dark mb-2">精彩社区</h4>
-                            <p class="text-sm text-dark/70">分享生活，参与话题，结识更多志同道合的朋友</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div class="function-section">
+        <div class="function-item">
+            <div class="function-icon">👤</div>
+            <div class="function-title">真人认证</div>
+            <div class="function-desc">严格的真人认证机制和审核，遇见真实</div>
         </div>
-    </section>
-    <section class="py-16 px-4 md:px-8 w-full">
-        <div class="max-w-7xl mx-auto text-center">
-            <h3 class="text-2xl font-semibold text-dark mb-10">他们在这里遇见了爱情</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white/50 rounded-xl p-6 shadow-md">
-                    <div class="w-16 h-16 rounded-full overflow-hidden mx-auto mb-4">
-                        <img src="https://picsum.photos/id/1012/200/200" alt="用户头像" class="w-full h-full object-cover">
-                    </div>
-                    <p class="text-dark/80 italic mb-4">"在这里遇到了陪伴我一生的人，感谢PinkLove让我们相遇。"</p>
-                    <p class="text-primary font-medium">Mr. Li & Mr. Wang · 在一起1年</p>
-                </div>
-                <div class="bg-white/50 rounded-xl p-6 shadow-md">
-                    <div class="w-16 h-16 rounded-full overflow-hidden mx-auto mb-4">
-                        <img src="https://picsum.photos/id/1025/200/200" alt="用户头像" class="w-full h-full object-cover">
-                    </div>
-                    <p class="text-dark/80 italic mb-4">"严格的真人认证让我很放心，终于不用面对虚假的资料了。"</p>
-                    <p class="text-primary font-medium">Mr. Zhang · 已脱单</p>
-                </div>
-                <div class="bg-white/50 rounded-xl p-6 shadow-md">
-                    <div class="w-16 h-16 rounded-full overflow-hidden mx-auto mb-4">
-                        <img src="https://picsum.photos/id/1074/200/200" alt="用户头像" class="w-full h-full object-cover">
-                    </div>
-                    <p class="text-dark/80 italic mb-4">"社区里认识了很多好朋友，也遇到了我的那个他，很温暖。"</p>
-                    <p class="text-primary font-medium">Mr. Chen & Mr. Liu · 在一起半年</p>
-                </div>
-            </div>
+        <div class="function-item">
+            <div class="function-icon">🔒</div>
+            <div class="function-title">隐私保护</div>
+            <div class="function-desc">多重隐私保护措施，守护你的每一份信任</div>
         </div>
-    </section>
-    <footer class="bg-dark/90 text-white py-10 px-4 md:px-8 w-full">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                            <i class="fa-solid fa-heart text-secondary"></i>
-                        </div>
-                        <h2 class="text-xl font-bold text-secondary italic">PinkLove</h2>
-                    </div>
-                    <p class="text-white/70 text-sm">遇见心动·遇见爱，专为男同打造的高品质真诚交友平台</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">功能导航</h4>
-                    <ul class="space-y-2 text-sm text-white/70">
-                        <li><a href="#" class="hover:text-secondary transition-colors">匹配交友</a></li>
-                        <li><a href="#" class="hover:text-secondary transition-colors">真人认证</a></li>
-                        <li><a href="#" class="hover:text-secondary transition-colors">社区话题</a></li>
-                        <li><a href="#" class="hover:text-secondary transition-colors">线下活动</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">关于我们</h4>
-                    <ul class="space-y-2 text-sm text-white/70">
-                        <li><a href="#" class="hover:text-secondary transition-colors">平台介绍</a></li>
-                        <li><a href="#" class="hover:text-secondary transition-colors">用户协议</a></li>
-                        <li><a href="#" class="hover:text-secondary transition-colors">隐私政策</a></li>
-                        <li><a href="#" class="hover:text-secondary transition-colors">联系我们</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">客服支持</h4>
-                    <ul class="space-y-2 text-sm text-white/70">
-                        <li>工作时间: 周一至周日 9:00-22:00</li>
-                        <li>友情链接:www.gov.cn </li>
-                        <li>友情链接:https://wap.miit.gov.cn/</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-white/10 pt-6 text-center text-white/50 text-xs">
-                <p>© 2026 PinkLove All Rights Reserved. 请理性交友，保护个人人身与财产安全</p>
-            </div>
+        <div class="function-item">
+            <div class="function-icon">💬</div>
+            <div class="function-title">精准匹配</div>
+            <div class="function-desc">智能推荐合适的他，让相遇更有可能</div>
         </div>
-    </footer>
-    <script>
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('bg-white/40', 'shadow-md');
-                header.classList.remove('bg-white/20');
-            } else {
-                header.classList.remove('bg-white/40', 'shadow-md');
-                header.classList.add('bg-white/20');
-            }
-        });
-
-        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const text = this.textContent.trim();
-                if (text.includes('注册')) {
-                    alert('ciallo～(∠・ω< )⌒☆');
-                } else if (text.includes('登录')) {
-                    alert('ciallo～(∠・ω< )⌒☆');
-                }
-            });
-        });
-    </script>
+        <div class="function-item">
+            <div class="function-icon">⭐</div>
+            <div class="function-title">精彩社区</div>
+            <div class="function-desc">分享生活，参与话题，结识更多志同道合的朋友</div>
+        </div>
+    </div>
+    <div class="footer-slogan">
+        他们在这里遇见了爱情
+    </div>
 </body>
 </html>
