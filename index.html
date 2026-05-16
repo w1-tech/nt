@@ -1,364 +1,204 @@
-<!--ciallo～(∠・ω< )⌒☆-->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script  src="./ac1a941554d9513009e5a2a64284eb5.js" ></script>
-    <title>PinkLove-遇见心动·遇见爱</title>
+    <link rel="icon" href="./v2-e7e4655eecff921044ede4e27cfe96d6_r.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./v2-e7e4655eecff921044ede4e27cfe96d6_r.ico" type="image/x-icon">
+    <title>功德积累器</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            font-family: 'Microsoft YaHei', sans-serif;
         }
 
         body {
-            background: linear-gradient(rgba(255, 182, 193, 0.644), rgba(255, 112, 183, 0.667)), 
-                        url('./background.jpg') no-repeat center center;
-            background-size: cover;
+            background-color: #ffffff;
             min-height: 100vh;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        nav {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 25px 60px;
-            width: 100%;
-        }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-heart {
-            width: 36px;
-            height: 32px;
             position: relative;
+            overflow: hidden;
         }
 
-        .logo-heart::before, .logo-heart::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 18px;
-            height: 28px;
-            border-radius: 18px 18px 0 0;
-            background: #ff3385;
+        .merit-button {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ffd700, #ffb300);
+            border: none;
+            box-shadow: 0 8px 25px rgba(255, 179, 0, 0.4);
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            color: #8b4513;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            z-index: 10;
         }
 
-        .logo-heart::before {
-            left: 0;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
+        .merit-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 179, 0, 0.5);
         }
 
-        .logo-heart::after {
-            left: 18px;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
+        .merit-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 15px rgba(255, 179, 0, 0.3);
         }
 
-        .logo-text {
-            color: #ff3385;
+        .merit-counter {
+            position: fixed;
+            bottom: 50px;
             font-size: 28px;
             font-weight: bold;
-            font-style: italic;
+            color: #333333;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 100;
         }
 
-        .logo-desc {
-            color: #ad1457;
-            font-size: 12px;
-            margin-top: 2px;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 50px;
-        }
-
-        .nav-menu a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-
-        .nav-menu a:hover {
-            opacity: 1;
-        }
-
-        .nav-btn-group {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn-login {
-            background: transparent;
-            border: 1px solid #fff;
-            color: #fff;
-            padding: 8px 28px;
-            border-radius: 22px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-login:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .btn-register {
-            background: #ff3385;
-            border: none;
-            color: #fff;
-            padding: 8px 28px;
-            border-radius: 22px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn-register:hover {
-            background: #e91e63;
-        }
-
-        .hero-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 60px;
-            min-height: 65vh;
-        }
-
-        .hero-content {
-            max-width: 50%;
-        }
-
-        .hero-title {
-            font-size: 50px;
-            font-weight: 800;
-            color: #ad1457;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-
-        .hero-subtitle {
-            font-size: 38px;
-            font-weight: 600;
-            color: #ad1457;
-            line-height: 1.3;
-            margin-bottom: 25px;
-        }
-
-        .hero-desc {
-            font-size: 20px;
-            color: #880e4f;
-            margin-bottom: 35px;
-        }
-
-        .feature-tags {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .tag-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #880e4f;
-            font-size: 16px;
-        }
-
-        .tag-icon {
-            width: 22px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #880e4f;
-            border-radius: 50%;
-            font-size: 14px;
-        }
-
-        .hero-btn-group {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-
-        .btn-free-register {
-            background: #ff4081;
-            border: none;
-            color: #fff;
-            padding: 13px 35px;
-            border-radius: 25px;
-            font-size: 18px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: background 0.3s;
-        }
-
-        .btn-free-register:hover {
-            background: #e91e63;
-        }
-
-        .btn-immediate-login {
-            background: transparent;
-            border: 2px solid #ff4081;
-            color: #ff4081;
-            padding: 13px 35px;
-            border-radius: 25px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-immediate-login:hover {
-            background: rgba(255, 64, 129, 0.1);
-        }
-
-        .user-count {
-            color: #880e4f;
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .hero-image {
-            width: 45%;
-            height: 500px;
-            position: relative;
-        }
-
-        .function-section {
-            background: #fff;
-            border-radius: 22px 22px 0 0;
-            margin: 0 60px;
-            padding: 35px 60px;
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .function-item {
-            text-align: center;
-            max-width: 220px;
-            flex: 1;
-        }
-
-        .function-icon {
+        .merit-plus {
+            position: absolute;
             font-size: 32px;
-            color: #ff4081;
-            margin-bottom: 12px;
-        }
-
-        .function-title {
-            font-size: 16px;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
+            color: #ffd700;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+            pointer-events: none;
+            animation: floatUp 1.5s ease-out forwards;
+            z-index: 1000;
         }
 
-        .function-desc {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.5;
+        .eye-effect {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            z-index: 9999;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: popIn 0.15s ease-out forwards;
         }
 
-        .footer-slogan {
-            text-align: center;
-            padding: 25px 0;
-            color: #880e4f;
-            font-size: 18px;
+        .eye-emoji {
+            font-size: clamp(120px, 25vw, 250px);
+            color: #ff0000;
+            animation: blink 0.4s infinite alternate;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-150px) scale(1.5);
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0.2;
+                transform: scale(1.15);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo-box">
-            <div class="logo-heart"></div>
-            <div>
-                <div class="logo-text">PinkLove</div>
-                <div class="logo-desc">遇见心动·遇见爱</div>
-            </div>
-        </div>
-        <div class="nav-menu">
-            <a href="#">首页</a>
-            <a href="#">社区</a>
-            <a href="#">活动</a>
-            <a href="#">关于我们</a>
-        </div>
-        <div class="nav-btn-group">
-            <button class="btn-login">登录</button>
-            <button class="btn-register">注册</button>
-        </div>
-    </nav>
+    <button class="merit-button" id="meritBtn">积累功德</button>
+    <div class="merit-counter">今日已加功德：<span id="meritCount">0</span></div>
 
-    <div class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">遇见心动的他</h1>
-            <h2 class="hero-subtitle">让爱情从这里开始</h2>
-            <p class="hero-desc">专为男同打造的高品质约会平台</p>
+    <script>
+        let todayMerit = parseInt(localStorage.getItem('todayMerit')) || 0;
+        const meritCountEl = document.getElementById('meritCount');
+        const meritBtn = document.getElementById('meritBtn');
+        
+        meritCountEl.textContent = todayMerit;
+
+        function eyeEffect() {
+            const el = document.createElement('div');
+            el.className = 'eye-effect';
+            const img = document.createElement('img');
+            img.src = 'http://www.0714.com/uploads/20250423/1745392512515233.gif';
+            img.style.width = '250px';
+            img.style.height = 'auto';
+            img.style.objectFit = 'contain';
+            img.onerror = function() {
+                this.src = 'http://www.0714.com/uploads/20250423/1745392512515233.gif';
+                this.onerror = function() {
+                    this.remove();
+                    const emoji = document.createElement('span');
+                    emoji.className = 'eye-emoji';
+                    emoji.textContent = '喵';
+                    el.appendChild(emoji);
+                };
+            };
             
-            <div class="feature-tags">
-                <div class="tag-item">
-                    <span class="tag-icon">❤</span>
-                    <span>真实<br>真人认证</span>
-                </div>
-                <div class="tag-item">
-                    <span class="tag-icon">🛡️</span>
-                    <span>安全<br>隐私保护</span>
-                </div>
-                <div class="tag-item">
-                    <span class="tag-icon">💬</span>
-                    <span>友好<br>真诚交友</span>
-                </div>
-            </div>
+            el.appendChild(img);
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 1200);
+        }
 
-            <div class="hero-btn-group">
-                <button class="btn-free-register">免费注册 ❤</button>
-                <button class="btn-immediate-login">立即登录</button>
-            </div>
+        function showMeritPlus(x, y) {
+            const meritPlus = document.createElement('div');
+            meritPlus.className = 'merit-plus';
+            meritPlus.textContent = '+100';
+            meritPlus.style.left = x + 'px';
+            meritPlus.style.top = y + 'px';
+            document.body.appendChild(meritPlus);
+            
+            setTimeout(() => meritPlus.remove(), 1500);
+        }
 
-            <p class="user-count">已有 1,258,320 位帅哥在这里找到属于自己的幸福</p>
-        </div>
-        <div class="hero-image">
-        </div>
-    </div>
-    <div class="function-section">
-        <div class="function-item">
-            <div class="function-icon">👤</div>
-            <div class="function-title">真人认证</div>
-            <div class="function-desc">严格的真人认证机制和审核，遇见真实</div>
-        </div>
-        <div class="function-item">
-            <div class="function-icon">🔒</div>
-            <div class="function-title">隐私保护</div>
-            <div class="function-desc">多重隐私保护措施，守护你的每一份信任</div>
-        </div>
-        <div class="function-item">
-            <div class="function-icon">💬</div>
-            <div class="function-title">精准匹配</div>
-            <div class="function-desc">智能推荐合适的他，让相遇更有可能</div>
-        </div>
-        <div class="function-item">
-            <div class="function-icon">⭐</div>
-            <div class="function-title">精彩社区</div>
-            <div class="function-desc">分享生活，参与话题，结识更多志同道合的朋友</div>
-        </div>
-    </div>
-    <div class="footer-slogan">
-        他们在这里遇见了爱情
-    </div>
+        meritBtn.addEventListener('click', (e) => {
+            eyeEffect();
+            showMeritPlus(e.clientX, e.clientY - 50);
+            todayMerit += 100;
+            meritCountEl.textContent = todayMerit;
+            localStorage.setItem('todayMerit', todayMerit);
+        });
+
+        function checkNewDay() {
+            const today = new Date().toDateString();
+            const savedDate = localStorage.getItem('meritDate');
+            
+            if (savedDate !== today) {
+                todayMerit = 0;
+                localStorage.setItem('todayMerit', 0);
+                localStorage.setItem('meritDate', today);
+                meritCountEl.textContent = todayMerit;
+            }
+        }
+        
+        checkNewDay();
+    </script>
 </body>
 </html>
